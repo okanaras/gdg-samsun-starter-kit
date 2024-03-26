@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+
+        /**
+         *
+         * Senkron (synchronous) Islemler
+         * Sirayla gerceklesen islemlerdir (Bir islem bitmeden diger isleme gecmez)
+         *
+         *
+         */
+
+        /**
+         *  Asenkron (asyncronous) Islemler
+         * Mevcut islemin tamamlanmasini beklemeden diger islemlerin devam edebildigi islemlerdir
+         * Arka planda gerceklesir.
+         *
+         *
+         * Not: JS kodlari genel olarak asenkron olarak birbirinden ayrilir
+        */
+
+        /**
+         *
+         * Promise Yaklasimi
+         * Promise JS de asenkron islemleri temsil eden bir nesne
+         * asenkron islemleri daha yonetilebilir ve anlasilir bir sekilde almak icin kullanilir.
+         *
+        */
+
+
+        // // promise
+        // let promise = new Promise((resolve, reject) => {
+        //     // asenkron islem burada yapilir
+        //     let result = false;
+
+        //     if (result) {
+        //         resolve('islem basarili');
+        //     } else {
+        //         reject('islem basarisiz. bir hata olustu')
+        //     }
+        // });
+
+        // promise.then(value => {
+        //     // promise basariliysa
+        //     console.log(value);
+        // }).catch(error => {
+        //     // promise reddedildiginde
+        //     console.log(error);
+        // }).finally(() => {
+        //     // sonuctan bagimsiz olarak her durumda calistirilir
+        //     console.log('islem tamamlandi');
+        // });
+
+
+        /**
+         * fetch get & post
+         */
+
+        // let apiURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+        // // fetch get ornek
+        // fetch(apiURL)
+        // .then((response) => {
+        //     // if islem basariliysa : 200-299 http status
+        //     if (response.ok) {
+        //         throw new Error("istek sirasinda ag hatasi olustu")
+        //     }
+        //     return response.json();
+        // })
+        // .then((okan) => {
+        //     console.log(okan);
+        // })
+        // .catch((error) => {
+        //     console.error("Hata olustu", error);
+        // })
+        // .finally(() => {
+        //     console.log('islem tamamlandi');
+        // });
+        // // not : asenkron yaklasimlarda then ile senkron gibi sirayla islem yaptirabiliyoruz
+
+        // // fetch post ornek
+
+        // function postData(url, data) {
+        //     fetch(url, {
+        //         method: "POST",
+        //         headers: {
+        //             'content-type': 'application/json' // icerik tipini json olarak belirleme
+        //         },
+        //         body: JSON.stringify(data)
+        //     })
+        //         .then((response) => {
+        //             // yanit geldiginde
+        //             return response.json();
+        //         })
+        //         .then((data) => {
+        //             console.log(data);
+        //         })
+        //         .catch((error) => {
+        //             console.log("hata", error);
+        //         })
+        //         .finally(() => {
+        //             console.log('islem tamamlandi');
+        //         })
+        // }
+
+        // let jsonData = {
+        //     title: 'test',
+        //     body: 'body bilgisi',
+        //     userId: '1'
+        // };
+
+        // let fetchUrl = "https://jsonplaceholder.typicode.com/posts";
+
+        // postData(fetchUrl, jsonData);
+
+        /**
+         * Axios get & post
+         */
+
+        // axios get ornegi
+        // axios.get("https://jsonplaceholder.typicode.com/posts/1")
+        //     .then((response) => {
+        //         console.log(response);
+        //         console.log(response.data);
+        //     })
+        //     .catch((error) => {
+        //         console.log("Hata: ", error);
+        //     });
+
+        // // axios post ornegi
+
+        // let jsonData = {
+        //     title: 'test',
+        //     body: 'body bilgisi',
+        //     userId: '1'
+        // };
+        // axios.post("https://jsonplaceholder.typicode.com/posts", jsonData)
+        //     .then((response) => console.log(response))
+        //     .catch((error) => {
+        //         console.log("Hata: ", error);
+        //     });
+
+
+        /**
+         * jQuery get & post
+        */
+
+        // // jquery get ornegi
+
+        // $.ajax({
+        //     url: "https://jsonplaceholder.typicode.com/posts/1",
+        //     type: "GET",
+        //     dataType: "json",
+        //     headers: {
+        //         'Content-Type': "application/json",
+        //         // 'Authorization': "Bearer Token"
+        //     },
+        //     // success: function (data) {
+        //     //     console.log(data);
+        //     // },
+        //     // error: function (xhr, status, error) {
+        //     //     console.log(status + ": " + error);
+        //     // }
+        // }).done((data) => {
+        //     console.log(data);
+        // }).fail((xhr, status, error) => {
+
+        // }).always(() => {
+        //     console.log('always -> promise, fetch ve axios taki finally');
+        // });
+
+        // // jquery post ornegi
+
+        // let jsonData = {
+        //     title: 'test',
+        //     body: 'body bilgisi',
+        //     userId: '1'
+        // };
+
+        // $.ajax({
+        //     url: "https://jsonplaceholder.typicode.com/posts",
+        //     method: 'POST',
+        //     // type: 'POST', // method veya type 2si de kullanilabilinir eger verilmezse get olarak varsayar
+        //     contentType: "application/json",
+        //     data: JSON.stringify(jsonData),
+        //     dataType: 'json',
+        // }).done((data) => {
+        //     return data;
+        // }).done((bilgi) => {
+        //     console.log(bilgi);
+        // });
+
+
+        /**
+         * Async Await
+         * 
+         * async, bir fonk onune yazilir. Bu fonksiyonun asenkron bir fonk oldugunu belirtir.
+         * asenkron bir fonk ve her zaman bir promise dondurur.
+         * 
+         * Fonk bir promise dondurmuyor. Kendisi otomatik promise donusturur.
+         * 
+         * Await anahtar kelimesi yalnizca async ile tanimlanmis fonksyionlarin icinde kullanilabilir.
+         * promise in sonucunu beklemek icin kullanilir
+         * Senkron sekilde islemlerimizin sirayla calismasini saglar.
+         * 
+        */
+
+        // then kullanmadan await ile islem yapmak icin kullanilir
+        async function dataGetir(url) {
+            let response = await fetch(url); // islem yapilmayana kadar alt satira gecmez
+            let response2 = await fetch(url);
+            let response3 = await fetch(url);
+            let response4 = await fetch(url);
+            let data = await response.json();
+
+            console.log(data);
+        }
+
+        let url = "https://jsonplaceholder.typicode.com/posts/15";
+
+        dataGetir(url);
+
+
+
+    </script>
+
+</body>
+
+</html>

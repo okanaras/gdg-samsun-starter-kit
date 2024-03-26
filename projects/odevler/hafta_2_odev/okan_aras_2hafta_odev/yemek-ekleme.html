@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bs5.3 min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bs icons  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- my custom css(s) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary p-4 mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Yemek Tarifleri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Yemek Listesi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Malzeme Ekle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Yemek Ekle</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Yemek Ekleme
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Yemek Adı" id="yemekAdi">
+
+                                <textarea class="form-control mt-4" id="yemekTarif" placeholder="Yemek Tarifi" cols="30"
+                                    rows="8"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Ürün Ara" id="search">
+                                <ul class="list-group mt-4" id="urunListesi">
+                                    <li class="list-group-item">An item <i
+                                            class="bi bi-plus-lg float-end delete-product"></i>
+                                    </li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <h5 class="card-header">
+                                        <strong>Yemek Adı: </strong> <span id="yemekBaslik">Domates Çorbası</span>
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="content">
+                                            <h5>İçindekiler</h5>
+                                            <ul class="icerik-listesi" id="icerikListesi">
+                                                <li class="d-flex justify-content-between">
+                                                    <span>
+                                                        <i class="bi bi-trash delete-product-content me-1"></i>
+                                                        <label for="miktar-1">Domates</label>
+                                                    </span>
+                                                    <input type="text" placeholder="miktar" id="miktar-1"
+                                                        class="float-end border-0 border-bottom border-black">
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <span>
+                                                        <i class="bi bi-trash delete-product-content me-1"></i>
+                                                        <label for="miktar-1">Domates</label>
+                                                    </span>
+                                                    <input type="text" placeholder="miktar" id="miktar-1"
+                                                        class="float-end border-0 border-bottom border-black">
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <span>
+                                                        <i class="bi bi-trash delete-product-content me-1"></i>
+                                                        <label for="miktar-1">Domates</label>
+                                                    </span>
+                                                    <input type="text" placeholder="miktar" id="miktar-1"
+                                                        class="float-end border-0 border-bottom border-black">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="recipe">
+                                            <h6>Tarif:</h6>
+                                            <p id="tarifDetay">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eius
+                                                illum
+                                                molestiae reprehenderit voluptatibus? Animi aspernatur consequatur
+                                                cumque
+                                                cupiditate dicta, eveniet hic incidunt inventore iste libero, magnam
+                                                molestiae nesciunt praesentium quaerat quasi qui quibusdam quisquam quo
+                                                quod
+                                                recusandae reprehenderit soluta totam ullam veniam, vero voluptatem
+                                                voluptatibus? Earum fugiat quaerat ratione?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 offset-md-8 mt-4">
+                                <button class="btn btn-outline-success w-100" id="btnKaydet">Kaydet</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- bs5.3 bundle.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- my custom js file(s)-->
+    <script src="assets/js/yemek-ekleme.js"></script>
+</body>
+
+</html>

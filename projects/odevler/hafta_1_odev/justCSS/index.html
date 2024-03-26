@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odev 1 - justCSS</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class="container">
+        <div class="navbar">
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#addTasks">Tarif Ekle</a></li>
+                <li><a href="#controlTasks">Tarif Duzenle</a></li>
+                <li><a href="#finishedTasks">Tarifi Bitenler</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- main  -->
+    <main class="container content">
+        <div class="row">
+            <!-- malzeme ve tarif ekleme bolumu -->
+            <section class="col-6" id="addTasks">
+                <form class="customFormCss">
+                    <h3>Malzeme ve Yemek Tarifi</h3>
+                    <input type="text" placeholder="Yemek Adi Giriniz">
+                    <input type="text" placeholder="Yemek Malzeme Giriniz">
+                    <input type="button" class="btnAdd" value="Malzeme Ekle">
+                    <textarea placeholder="Yemek Tarifi giriniz" style="height: 150px"></textarea>
+                    <input type="text" value="3 kasik yag, 1 bardak su, 200gr fasulye..." readonly>
+                    <input type="button" value="Yemek Ekle" class="btnAdd">
+                </form>
+            </section>
+
+            <!-- malzeme ve tarif kontrol bolumu -->
+            <section class="col-6" id="controlTasks">
+                <form class="customFormCss">
+                    <h3>Yemek Malzeme ve Tarif Kontrol</h3>
+                    <!-- kendini tekrarlayan kisim start -->
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Fasulye icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <div class="items">
+                                    <input type="text" value="yag" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                                <div class="items">
+                                    <input type="text" value="su" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+
+                                <div class="items">
+                                    <input type="text" value="fasulye" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr fasulye...</textarea>
+                            </div>
+                            <div class="controlSectionActions">
+                                <input type="button" class="btnDelete" value="Sil">
+                                <input type="button" class="btnAdd" value="Yapildi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Fasulye icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <div class="items">
+                                    <input type="text" value="yag" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                                <div class="items">
+                                    <input type="text" value="su" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+
+                                <div class="items">
+                                    <input type="text" value="fasulye" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr fasulye...</textarea>
+                            </div>
+
+                            <div class="controlSectionActions">
+                                <input type="button" class="btnDelete" value="Sil">
+                                <input type="button" class="btnAdd" value="Yapildi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Fasulye icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <div class="items">
+                                    <input type="text" value="yag" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                                <div class="items">
+                                    <input type="text" value="su" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+
+                                <div class="items">
+                                    <input type="text" value="fasulye" readonly>
+                                    <input type="button" value="Malzemeyi Sil" class="btnDelete">
+                                </div>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr fasulye...</textarea>
+                            </div>
+
+                            <div class="controlSectionActions">
+                                <input type="button" class="btnDelete" value="Sil">
+                                <input type="button" class="btnAdd" value="Yapildi">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- kendini tekrarlayan kisim end -->
+                </form>
+            </section>
+
+            <!-- malzeme ve tarif bitmis bolumu -->
+            <section class="col-6" id="finishedTasks">
+                <form class="customFormCss">
+                    <h3>Malzemesi ve Tarifi Verilen Yemekler</h3>
+                    <!-- kendini tekrarlayan kisim start -->
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Fasulye icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <input type="text" value="yag" readonly>
+                                <input type="text" value="su" readonly>
+                                <input type="text" value="fasulye" readonly>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr fasulye...</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Pilav icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <input type="text" value="yag" readonly>
+                                <input type="text" value="su" readonly>
+                                <input type="text" value="pilav" readonly>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr pilav...</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row customBorder">
+                        <h5 style="margin-bottom: 7px; margin-top: 7px;">Kofte icin malzemeler</h5>
+                        <div class="col-12 controlSectionWrapper">
+                            <div class="controlSectionMalzeme">
+                                <input type="text" value="yag" readonly>
+                                <input type="text" value="su" readonly>
+                                <input type="text" value="kofte" readonly>
+                            </div>
+                            <div class="controlSectionTarif">
+                                <textarea style="height: 150px"
+                                    readonly>3 kasik yag, 1 bardak su, 200gr kofte...</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- kendini tekrarlayan kisim end -->
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 ">
+                    <p><strong>&copy; <span>YazilimEgitim</span> </strong> 2024</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.ls-categories .list-group-item:hover {
+    background-color: #545353;
+}
+
+.ls-categories .list-group-item.active:hover {
+    background-color: #0d6efd;
+}
+
+footer {
+    /* height: 100px; p-4 ile bu islem gibi yapabildik */
+}
+
+footer p {
+    /* line-height: 100px; p-4 ile bu islem gibi yapabildik */
+    text-align: center;
+}
+
+/* 
+ * inline-css
+ * #id
+ * .class
+ * element
+ */
+
+
+/* #navbar {
+    background-color: #ffe115 !important;
+} */
+
+@media screen and (max-width:768px) {
+    nav.navbar {
+        background-color: #0a53be !important;
+    }
+}
+
+@media screen and (max-width:360px) {
+    nav.navbar {
+        background-color: #ca0ac5 !important;
+    }
+}

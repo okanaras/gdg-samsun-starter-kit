@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f8f9;
+}
+
+.customFormCss {
+    height: 400px;
+}
+
+.customFormCss .customBorder {
+    border-bottom: 1px solid #b8b814;
+}
+
+.customFormCss h3 {
+    border-bottom: 1px solid #999;
+}
+
+.customFormCss .textareaLabel {
+    color: #545557;
+}
+
+.customFormCss .customRowCss {
+    border-bottom: 1px solid #b8b814;
+}

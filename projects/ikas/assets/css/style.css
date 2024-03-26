@@ -1,0 +1,84 @@
+body {
+    font-family: "Poppins", sans-serif !important;
+
+}
+
+.font-playfair {
+    font-family: "Playfair Display", serif !important;
+
+}
+
+a {
+    text-decoration: none !important;
+}
+
+nav a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600 !important;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav img {
+    height: 90px;
+}
+
+nav .login a:nth-child(2) {
+    font-style: 20px;
+    font-weight: 300 !important;
+}
+
+nav li.nav-item {
+    margin-right: 20px;
+}
+
+nav li.nav-item::after {
+    width: 0;
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: #2b3035;
+    transition: all .2s ease-in-out;
+}
+
+nav li.nav-item:hover::after {
+    width: 100px;
+}
+
+.main-title {
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 60px;
+}
+
+.main-title span {
+    color: #0a53be;
+}
+
+.main-middle-info a {
+    display: inline-block;
+}
+
+.main-middle-info a:first-child {
+    font-size: 20px;
+    font-weight: 300 !important;
+}
+
+.main-middle-info a:nth-child(2) {
+    color: inherit;
+    font-weight: 600 !important;
+    font-size: 18px;
+}
+
+.main-middle-info a:nth-child(2)::after {
+    width: 0;
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: #2b3035;
+    transition: all .2s ease-in-out;
+}
+
+.main-middle-info a:nth-child(2):hover::after {
+    width: 100%;
+}

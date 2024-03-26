@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .text-orange {
+            color: orange
+        }
+
+        .text-red {
+            color: red
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button class="btn btn-add" id="btnAdd">Ekle</button>
+    <button class="btn btn-delete" id="btnDelete">Sil</button>
+
+    <button class="btn btn-renk-red">Kirmiziyi Kladir</button>
+    <button class="btn btn-renk-yellow">Test 2</button>
+
+    <ul id="itemList">
+        <li>1.Eleman</li>
+    </ul>
+
+    <hr>
+
+    1- <input type="checkbox" value="1"><br>
+    2- <input type="checkbox" value="2"><br>
+    3- <input type="checkbox" value="3"><br>
+
+    <hr>
+
+    <p id="paragraf" title="Baslik asdasd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum
+        accusantium sapiente! Autem, similique laboriosam tempora non fugit ut maiores?</p>
+
+
+
+</body>
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    // let btn = document.getElementById('btnAdd'); // element dondurur
+    // let btn2 = document.getElementsByClassName('btn-add'); // butun classlari -> html collection
+    // let btn3 = document.getElementsByTagName('button'); // butun taglari -> html collection
+
+    // // console.log(btn);
+    // // console.log(btn2);
+    // // console.log(btn3);
+
+    // /*****/
+
+    // btn.style.fontSize = '50px';
+    // btn.style.color = 'red';
+
+    // let css = {
+    //     backgroundColor: 'green',
+    //     color: '#fff'
+    // }
+
+    // Object.assign(btn.style, css)
+
+    // /**
+    //  * js Object.assign(atamaYapilan, atanan)
+    //  *
+    //  * bir hedef nesne veya daha fazla nesnenin properties (ozelliklerini) kopyalamak icin kullanilir.
+    //  *
+    // */
+
+    // const nesne1 = { a: 1, b: 2 };
+    // const nesne2 = { b: 5, c: 4 };
+
+    // let sonuc = Object.assign(nesne1, nesne2);
+    // console.log(nesne1); // sonuc 1 5 4
+    // console.log(nesne2); // 5 4
+
+    // /***/
+
+    // // querySelector -> her zaman istenilenden ilkini bulur onun uzerinde islem yapar
+    // let btnQuery = document.querySelector('#btnAdd');
+    // let btnQuery2 = document.querySelector('.btn-add');
+    // let btnQuery3 = document.querySelector('button');
+
+    // // console.log(btnQuery);  yalnizca ilk buldugunu getirdi
+    // // console.log(btnQuery2); yalnizca ilk buldugunu getirdi
+    // // console.log(btnQuery3); yalnizca ilk buldugunu getirdi
+
+    // // querySelectorAll -> getElements gibi calisir. html collection yerine nodeList dondurur
+    // let butonlar = document.querySelectorAll('.btn-add');
+    // let butonlar2 = document.querySelectorAll('button');
+
+    // console.log(butonlar);
+    // console.log(butonlar2);
+
+    /* jQuery Start */
+
+    let btn1 = $('#btnAdd');
+    let btn2 = $('.btn-add');
+    let btn3 = $('button');
+
+    let cokluElement = $('#btnAdd, .btn-delete');
+    // console.log(cokluElement); // id ye gore ve class a gore getridi
+
+    // console.log(btn1); jquery formatinda donduruyor. Bircok hazir func mevcut
+    // console.log(btn2); jquery formatinda donduruyor. Bircok hazir func mevcut
+    // console.log(btn3); jquery formatinda donduruyor. Bircok hazir func mevcut
+
+
+    // jquery ile css manipulation
+
+    let paragrafCss = {
+        color: 'blue',
+        backgroundColor: 'black',
+        fontSize: '20px'
+    };
+
+    // $('p').css(paragrafCss);
+
+    // $('p').css('color', 'orange'); // tek satir
+
+    // $('p').css({
+    //     color: 'blue',
+    //     backgroundColor: 'black',
+    //     fontSize: '20px'
+    // });
+
+    // jquery events
+
+    $('#btnAdd').click(function (e) {
+        e.preventDefault(); // butonun ozelliklerini devre disi birakir
+
+        for (let i = 1; i <= 10; i++) {
+            $('#itemList').append(`<li>${i}. eleman</li>`);
+
+        }
+    });
+
+    // $('.btn-renk-red').click(function (e) {
+    //     e.preventDefault();
+    //     $('#itemList li:odd').css('color', 'red');
+    //     // $('#itemList li:even').css('color', 'yellow'); cift
+    // });
+    // $('.btn-renk-yellow').click(function (e) {
+    //     e.preventDefault();
+    //     // $('#itemList li:odd').css('color', 'red'); tek
+    //     $('#itemList li:even').css('color', 'yellow');
+    // });
+
+    // js documan ready
+    document.addEventListener('DOMContentLoaded', function () { });
+
+    // jquery documan ready
+    $(document).ready(function () {
+
+        let paragraf = $('p');
+
+        $('#btnDelete').click(function () {
+            // let checkbox = $("[type ='checkbox']:checked");
+
+            // // jquery de forEach(val,index,arr) yok, onun yerine each(index, satir) func var. 
+            // checkbox.each(function (index, satir) {
+            //     console.log($(satir).val()); // jq de elementi value sunu okumu
+            // });
+
+            // // console.log(checkbox);
+
+
+            // // jquery ile attr get - set
+            // let paragraf = $('#paragraf');
+            // paragraf.attr('title', 'degisti');
+            // console.log(paragraf.attr('title'));
+
+            $(paragraf).addClass('text-red btn btn-success');
+
+        });
+
+        $('.btn-renk-red').click(function () {
+            // $(paragraf).removeClass('text-red');
+            $(paragraf).toggleClass('text-red'); // toggleClass varsa siler, yoksa ekler
+
+
+        });
+
+    });
+
+
+
+    $(document).ready(function () { });
+
+
+
+
+    /* jQuery End */
+
+
+
+
+</script>
+
+
+</html>
