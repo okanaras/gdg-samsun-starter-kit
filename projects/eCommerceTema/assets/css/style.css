@@ -1011,3 +1011,52 @@ main {
 .order-detail-wrapper .nav-tabs .nav-link:hover {
     border: unset;
 }
+
+/* Contract */
+.contract {
+    display: flex;
+    font-size: 11px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+}
+
+.contract label {
+    margin: 5px 10px;
+}
+
+.contract a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contract input {
+    width: 20px;
+    height: 20px;
+}
+
+/* Contract Modal*/
+
+.text-wrapper h1,
+.text-wrapper h2,
+.text-wrapper h3,
+.text-wrapper h4,
+.text-wrapper h5,
+.text-wrapper h5 {
+    font-size: 12px;
+}
+
+.contracts-text-wrapper {
+    max-height: 150px;
+    overflow-y: scroll;
+    padding: 30px 0;
+    background-color: #fafafa;
+}
+
+.contract-text {
+    width: 80%;
+    font-size: 12px;
+}
+
+.btn-contracts-approve:hover {
+    background-color: #b76306 !important;
+}
