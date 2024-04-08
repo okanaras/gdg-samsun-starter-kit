@@ -359,3 +359,61 @@ $shortAddress = explode('-', $longAddress);
 var_dump($shortAddress); // string to array
 
 echo '<br><br>';
+
+
+$persons = [
+    [
+        'name' => 'ali',
+        'lastname' => 'yilmaz',
+        'age' => '30',
+        'address' => [
+            'city' => 'istanbul',
+            'district' => 'besiktas',
+        ]
+    ],
+    [
+        'name' => 'furkana',
+        'lastname' => 'test',
+        'age' => '15',
+        'address' => [
+            'city' => 'istanbul',
+            'district' => 'fatig',
+        ]
+    ],
+    [
+        'name' => 'ayse',
+        'lastname' => 'kara',
+        'age' => '8',
+        'address' => [
+            'city' => 'izmir',
+            'district' => 'cesme',
+        ]
+    ],
+    [
+        'name' => 'zeynep',
+        'lastname' => 'ozdemir',
+        'age' => '16',
+        'address' => [
+            'city' => 'istanbul',
+            'district' => 'avcilar',
+        ]
+    ],
+];
+
+function printPersonDetail(array $persons, string $prefix = '')
+{
+    foreach ($persons as $key => $value) {
+        if (is_array($value)) {
+            printPersonDetail($value, $prefix . $key . '->');
+        } else {
+            echo $prefix . $key . ' :' . $value . '<br>';
+
+            // echo "$prefix $key: $value <br>";
+        }
+        echo "<br>";
+    }
+}
+
+printPersonDetail($persons);
+
+echo '<br><br>';
