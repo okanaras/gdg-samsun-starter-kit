@@ -831,3 +831,265 @@ main {
     border-color: #f38509;
     box-shadow: none;
 }
+
+/* Card Sayfasi */
+
+.card-page table img {
+    width: 100px;
+}
+
+.card-page table th,
+.my-orders table th {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.card-page table div,
+.my-orders table div {
+    font-size: 11px;
+}
+
+.card-page table td,
+.my-orders table td {
+    vertical-align: middle;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-page table tbody,
+.card-page table td,
+.card-page table tfoot,
+.card-page table th,
+.card-page table thead,
+.card-page table tr,
+.my-orders table tbody,
+.my-orders table td,
+.my-orders table tfoot,
+.my-orders table th,
+.my-orders table thead,
+.my-orders table tr {
+    border-color: #f38509;
+}
+
+.card-page table .piece-wrapper .input-group {
+    width: 150px;
+}
+
+.card-page table .piece-wrapper .input-group span {
+    height: unset;
+    line-height: unset;
+}
+
+/* Card Basket Detail*/
+
+.btn-approve-basket {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0;
+}
+
+.btn-approve-basket:hover {
+    background-color: #c66b05;
+}
+
+.basket-detail {
+    height: 100%;
+    background-color: #f7f7f7;
+    position: sticky;
+    top: 0;
+}
+
+.grand-total {
+    border: 1px solid #f38509;
+    padding: 30px;
+}
+
+.grand-total p {
+    font-size: 12px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.grand-total p:last-child {
+    border-bottom: unset;
+    font-size: 14px;
+}
+
+.grand-total i {
+    cursor: pointer;
+}
+
+.grand-total i:hover {
+    color: #f38509;
+}
+
+.discount-wrapper {
+    border: 1px solid #ebebeb;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+.discount-wrapper h5 {
+    font-size: 12px;
+}
+
+.discount-wrapper input {
+    font-size: 12px;
+    height: 40px;
+}
+
+.discount-wrapper input:focus {
+    border-color: #f38509;
+    box-shadow: unset;
+}
+
+.discount-wrapper button {
+    font-size: 12px;
+    height: 40px;
+}
+
+/* Order Detail Wrapper Checkout Sayfasi */
+
+.order-detail-wrapper {}
+
+.order-detail-wrapper h6 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.order-detail-wrapper h6:before {
+    width: 90px;
+    height: 2px;
+    background-color: #2d3a4b;
+    border: none;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    margin-top: 30px;
+}
+
+.order-detail-wrapper label {
+    width: 100%;
+    font-size: 12px;
+}
+
+.order-detail-wrapper input,
+.order-detail-wrapper select,
+.order-detail-wrapper textarea {
+    border: 1px solid #2d3a4b;
+    height: 45px;
+    float: left;
+    width: 100%;
+    font-size: 11px;
+    padding: 0 10px;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.order-detail-wrapper textarea {
+    height: inherit;
+    resize: none;
+}
+
+.order-detail-wrapper .nav-tabs .nav-link {
+    position: relative;
+    padding-bottom: 10px;
+    border: unset;
+    color: inherit;
+    font-size: 12px;
+}
+
+.order-detail-wrapper .nav-tabs .nav-link::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #f38509;
+    transition: width .3s ease;
+}
+
+.order-detail-wrapper .nav-tabs .nav-link.active::after {
+    width: 100%;
+}
+
+.order-detail-wrapper .nav-tabs .nav-link:focus,
+.order-detail-wrapper .nav-tabs .nav-link:hover {
+    border: unset;
+}
+
+/* Contract */
+.contract {
+    display: flex;
+    font-size: 11px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+}
+
+.contract label {
+    margin: 5px 10px;
+}
+
+.contract a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contract input {
+    width: 20px;
+    height: 20px;
+}
+
+/* Contract Modal*/
+
+.text-wrapper h1,
+.text-wrapper h2,
+.text-wrapper h3,
+.text-wrapper h4,
+.text-wrapper h5,
+.text-wrapper h5 {
+    font-size: 12px;
+}
+
+.contracts-text-wrapper {
+    max-height: 150px;
+    overflow-y: scroll;
+    padding: 30px 0;
+    background-color: #fafafa;
+}
+
+.contract-text {
+    width: 80%;
+    font-size: 12px;
+}
+
+.btn-contracts-approve:hover {
+    background-color: #b76306 !important;
+}
+
+/* Orders Detail */
+.s-amount div {
+    font-size: 12px;
+}
+
+.my-orders table td {
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.my-orders img {
+    width: 100px;
+}
+
+.my-orders .card,
+.my-orders .card-header {
+    border-color: #f38509;
+}
+
+.my-orders .card-header {
+    background-color: rgba(243 133 7 / 38%);
+}
