@@ -360,6 +360,9 @@ var_dump($shortAddress); // string to array
 
 echo '<br><br>';
 
+/**
+ ** Recursive Func
+ */
 
 $persons = [
     [
@@ -416,4 +419,18 @@ function printPersonDetail(array $persons, string $prefix = '')
 
 printPersonDetail($persons);
 
+echo '<br><br>';
+
+/**
+ ** JSON ENCODE : array to json cevirme
+ ** JSON DECODE : json to arr cevirme
+ */
+
+$jsonData = json_encode($persons);
+echo $jsonData;
+
+echo '<br><br>';
+
+$jsonDecode = json_decode($jsonData);
+print_r($jsonDecode);
 echo '<br><br>';
