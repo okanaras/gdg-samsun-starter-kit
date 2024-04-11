@@ -14,6 +14,13 @@ interface;
 	- soyut siniflar olmak zorunda {} ler yok.
 traits:
 	- normal class lardaki gibi propertyler(public,protected,private) tanimlanabilinir
+namespace, use ve require 
+	- namespace app\models; // namespace anahtar sozcugu ile dosyanin oldugu dizini yaziyoruz.
+	- use app\contracts\IEmployee; // use anahtar sozcugu ile kullanilanin yolunu adina kadar veriyoruz.
+	- require "../app/models/Employee.php"; // require anahtar sozcugu ile dosyanin oldugu dizini adina kadar yaziyoruz.
+	- use app\base\Manager as BaseManager; // as anahtar sozcugu ile ayni isimli classlari birbirinden ayirt ediyoruz
+	- use app\models\Manager as ModelManager; // model adi as de verilen sekildeki gibi kullanilmalidir. $man = new BaseManager();
+ 
 
 self:: -> static olarak ilgili class i dondurur.s
 

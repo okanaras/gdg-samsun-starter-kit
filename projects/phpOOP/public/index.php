@@ -3,14 +3,21 @@
 require "../app/contracts/IEmployee.php";
 require "../app/traits/Logger.php";
 require "../app/models/Employee.php";
+require "../app/base/Manager.php";
 require "../app/models/Manager.php";
 require "../app/models/Account.php";
 require "../app/models/Ik.php";
 
+use app\models\Manager as ModelManager;
+use app\base\Manager as BaseManager;
+use app\models\Account;
+use app\models\Ik;
 
 echo '<hr>';
 
-$manager = new Manager(20);
+$manager = new ModelManager(20);
+$manager = new BaseManager(20);
+
 $account = new Account(20);
 $ik = new Ik(20);
 

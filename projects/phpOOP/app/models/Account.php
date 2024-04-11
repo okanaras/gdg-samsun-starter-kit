@@ -1,4 +1,11 @@
 <?php
+
+namespace app\models;
+
+use app\models\Employee;
+use app\traits\Logger;
+
+
 class Account extends Employee
 {
     use Logger;

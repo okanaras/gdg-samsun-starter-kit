@@ -1,5 +1,7 @@
 <?php
 
+namespace app\contracts;
+
 interface IEmployee
 {
     const SAYI = 125;

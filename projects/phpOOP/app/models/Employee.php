@@ -1,5 +1,9 @@
 <?php
 
+namespace app\models;
+
+use app\contracts\IEmployee;
+
 /**
  * ! NOT: 
  * ? Acces Modifiers
