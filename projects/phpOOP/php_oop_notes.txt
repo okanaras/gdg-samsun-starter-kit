@@ -1,0 +1,21 @@
+1 sinif (abstract veya normal) yalnizca 1 tane yerden turetilebilinir(extends). Bunun icin php de traits kullaniriz.
+not: 1 den fazla yerden implements edilebilinir(interface).
+
+abstract class; 
+	- yalnizca 1 kez extends edilebilinir
+	- sabit degisken disinda diger degiskenler de tanimlanabilir
+	- abstract olarak tanimlanan fonk, class ta olmak zorunda
+	- cons fonk olabilir ve classta tanimlaninca parent::construct(); ile calistirilabilir.
+
+interface;
+	- 1 den fazla interface ten implements edilebilinir
+	- yalnizca sabit degiskenler tanimlanabilir.
+	- butun fonks lar implemente edilen sinifa eklenmeli.
+	- soyut siniflar olmak zorunda {} ler yok.
+traits:
+	- normal class lardaki gibi propertyler(public,protected,private) tanimlanabilinir
+
+self:: -> static olarak ilgili class i dondurur.s
+
+stres yonetimi feedbeck nasil alinamli nasil yonetilmeli, duygusal zeka egitimi
+script tabanli makine tabanli dil

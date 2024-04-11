@@ -9,12 +9,15 @@
  * * private : Yalnizca tanimlandigi sinif icerisinden ulasilabilinir.
  */
 
-class Employee
+abstract class Employee implements IEmployee
 {
+
     // Properties
     protected string $firstname;
     protected string $lastname;
     protected int $age;
+    protected float $salary;
+    protected int $experience = 1;
 
     public function __construct(int $age)
     {
@@ -59,6 +62,35 @@ class Employee
     public function setAge(int $age): self
     {
         $this->age = $age;
+        return $this;
+    }
+
+    abstract function calculateSalary(): float;
+    // abstract fonk lar suslu parantez olmaz fonk basinda abstract olur. Anlami bu siniftan turetilmis bir sinif varsa o sinif bu fonksiyonu kullanmak zorunda.
+
+
+    function getSalary(): float
+    {
+        // echo 'get salary calisti';
+        return $this->salary;
+    }
+
+
+    function setSalary(float $salary): Employee
+    {
+        $this->salary = $salary;
+        return $this;
+    }
+
+    function getExperience()
+    {
+        return $this->experience;
+    }
+
+    function setExperience(int $experience): Employee
+    {
+        $this->experience = $experience;
+
         return $this;
     }
 
