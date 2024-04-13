@@ -82,7 +82,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: mysql8.1
       # PMA_USER: root
       # PMA_PASSWORD: "12345678"
     depends_on:

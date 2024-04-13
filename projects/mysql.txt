@@ -1,0 +1,12 @@
+-- Bolum 19: Mysql Sistemi Ornegi - 110. Oluşturulacak Tabloların Çizilmesi
+
+# MySQL Lessons
+# sema olustuma ve charset atama: 
+-- CREATE SCHEMA fullstack COLLATE utf8mb4_0900_ai_ci;
+
+# veritabani olusturma
+-- CREATE DATABASE fullstackdeveloper;
+
+# veritabani silme
+-- DROP DATABASE fullstackdeveloper;
+
