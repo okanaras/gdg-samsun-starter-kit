@@ -72,7 +72,7 @@ services:
       - php8.1
       - php8.2
     volumes:
-      - ./mysql8_1:/var/lib/mysql8.1
+      - ./mysql8_1:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}

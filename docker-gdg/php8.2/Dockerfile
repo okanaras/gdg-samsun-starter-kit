@@ -43,3 +43,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN chown -R www-data:www-data /var/www/html/
 RUN chown -R www-data:www-data /var/www/html/
 
+#ben ekledim
+ENV PATH="/root/.composer/vendor/bin:${PATH}"
+
+
+
+
+

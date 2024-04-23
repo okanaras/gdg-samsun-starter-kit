@@ -7,5 +7,6 @@ docker-gdg/mysql8_1/*
 !docker-gdg/mysql8_1/mysql8_1.txt
 projects/tvf-demo
 projects/merit
+projects/merit-esg
 # projects/*
 # !projects/testProje
