@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\CardController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\MyOrdersController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Front\CardController;
+use App\Http\Controllers\Front\CheckoutController;
+use App\Http\Controllers\Front\DashboardController;
+use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Front\MyOrdersController;
+use App\Http\Controllers\Front\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index']);
@@ -18,6 +20,12 @@ Route::get('/odeme', [CheckoutController::class, 'index']);
 
 Route::get('/siparislerim', [MyOrdersController::class, 'index']);
 Route::get('/siparislerim-detay', [MyOrdersController::class, 'detail']);
+
+Route::get('/kayit-ol', [RegisterController::class, 'showForm'])->name('register');
+Route::post('/kayit-ol', [RegisterController::class, 'register']);
+
+Route::get('/giris', [LoginController::class, 'showForm'])->name('login');
+Route::post('/giris', [LoginController::class, 'login']);
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
