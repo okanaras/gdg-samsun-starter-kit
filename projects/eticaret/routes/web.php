@@ -26,6 +26,7 @@ Route::middleware('throttle:registration')->group(function () {
     Route::post('/kayit-ol', [RegisterController::class, 'register']);
 });
 
+Route::get('dogrula/{token}', [RegisterController::class, 'verify'])->name('verify');
 
 Route::get('/giris', [LoginController::class, 'showForm'])->name('login')->middleware('throttle:5,60'); // throttle:5,60 : 60 dakikada 5 istek
 Route::post('/giris', [LoginController::class, 'login']);

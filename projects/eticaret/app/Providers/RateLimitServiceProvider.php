@@ -28,7 +28,7 @@ class RateLimitServiceProvider extends ServiceProvider
          */
 
         RateLimiter::for('registration', function ($job) {
-            return Limit::perHour(10)->by($job->ip()); // 5 requests per hour by IP address
+            return Limit::perHour(500)->by($job->ip()); // 5 requests per hour by IP address
         });
 
         RateLimiter::for('login', function ($job) {
