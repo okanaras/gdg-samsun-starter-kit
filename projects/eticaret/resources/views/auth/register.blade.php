@@ -14,22 +14,48 @@
         <h5 class="text-muted fw-normal mb-4">Hesap Olusturma</h5>
         <form class="forms-sample" action="{{ route('register') }}" method="POST" id="registerForm">
             @csrf
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="mb-3">
                 <label for="name" class="form-label">Ad Soyad</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Ad Soyad">
+                {{-- css e @error('validateVerilenAd')@enderror ile dokunulabilinir
+                value="{{ old('name') }}" ile eski degerini alabiliriz --}}
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    placeholder="Ad Soyad" value="{{ old('name') }}">
+                @error('name')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email Adresi</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                    name="email" placeholder="Email" value="{{ old('email') }}">
+                @error('email')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Parola</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Parola">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
+                    name="password" placeholder="Parola">
+                @error('password')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="password_confirmation" class="form-label">Parola Tekrari</label>
-                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
-                    placeholder="Parola Tekrari">
+                <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
+                    id="password_confirmation" name="password_confirmation" placeholder="Parola Tekrari">
+                @error('password_confirmation')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-check mb-3">
                 <input type="checkbox" class="form-check-input" id="authCheck" name="remember">

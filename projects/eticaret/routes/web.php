@@ -21,10 +21,13 @@ Route::get('/odeme', [CheckoutController::class, 'index']);
 Route::get('/siparislerim', [MyOrdersController::class, 'index']);
 Route::get('/siparislerim-detay', [MyOrdersController::class, 'detail']);
 
-Route::get('/kayit-ol', [RegisterController::class, 'showForm'])->name('register');
-Route::post('/kayit-ol', [RegisterController::class, 'register']);
+Route::middleware('throttle:registration')->group(function () {
+    Route::get('/kayit-ol', [RegisterController::class, 'showForm'])->name('register');
+    Route::post('/kayit-ol', [RegisterController::class, 'register']);
+});
 
-Route::get('/giris', [LoginController::class, 'showForm'])->name('login');
+
+Route::get('/giris', [LoginController::class, 'showForm'])->name('login')->middleware('throttle:5,60'); // throttle:5,60 : 60 dakikada 5 istek
 Route::post('/giris', [LoginController::class, 'login']);
 
 Route::prefix('admin')->group(function () {

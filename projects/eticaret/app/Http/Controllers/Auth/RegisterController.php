@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -12,8 +15,21 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        dd($request->all());
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+            // 'password' => Hash::make($request->password)
+        ];
+
+        // $data = $request->only('name', 'email', 'password');
+
+        // $data = $request->except('_token', 'remember');
+
+        $user = User::create($data);
+
+        return redirect()->route('login');
     }
 }
