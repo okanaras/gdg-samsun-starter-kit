@@ -31,6 +31,6 @@ Route::get('dogrula/{token}', [RegisterController::class, 'verify'])->name('veri
 Route::get('/giris', [LoginController::class, 'showForm'])->name('login')->middleware('throttle:5,60'); // throttle:5,60 : 60 dakikada 5 istek
 Route::post('/giris', [LoginController::class, 'login']);
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', [DashboardController::class, 'index']);
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 });

@@ -6,9 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Events\UserRegisterEvent;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -23,11 +24,14 @@ class RegisterController extends Controller
 
         $user = User::create($data);
 
-        event(new UserRegisterEvent($user));
+        // event(new UserRegisterEvent($user));
 
-        dd('event calistirildi');
+        // $remember = $request->has('remember');
+        // Auth::login($user, $remember);
 
-        // return redirect()->route('login');
+        alert()->info('Bilgi', 'Mailinize gelen onay mailini onaylayin.');
+
+        return redirect()->back();
     }
 
     public function verify(Request $request)
@@ -35,7 +39,8 @@ class RegisterController extends Controller
         $userID = Cache::get('verify_token_' . $request->token);
 
         if (!$userID) {
-            dd('user bulunamadi');
+            alert()->warning('Uyari', 'Tokenin gecerlilik suresi dolmis.');
+            return redirect()->route('register');
         }
 
         $user = User::findOrFail($userID);
@@ -44,6 +49,9 @@ class RegisterController extends Controller
 
         Cache::forget('verify_token_' . $request->token);
 
-        dd('User dogrulandi');
+        Auth::login($user);
+        alert()->success('Basarili', 'Hesabiniz onaylandi.');
+
+        return redirect()->route('admin.index');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Notifications\WelcomeMailNotification;
 use Illuminate\Support\Str;
 use App\Mail\UserWelcomeMail;
 use App\Events\UserRegisterEvent;
@@ -31,6 +32,8 @@ class UserRegisterListener
         // on bellekte 60 dk boyunca tutulacak
         Cache::put('verify_token_' . $token, $event->user->id,  now()->addMinutes(60));
 
-        Mail::to($event->user->email)->send(new UserWelcomeMail($event->user, $token));
+        $event->user->notify(new WelcomeMailNotification($token));
+
+        // Mail::to($event->user->email)->send(new UserWelcomeMail($event->user, $token));
     }
 }
