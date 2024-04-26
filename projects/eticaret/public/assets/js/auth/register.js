@@ -284,6 +284,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    btnRegister.addEventListener("click", function (event) {
+        ruleName: for (const rule in validationRules) {
+            // let element = $('[name=' + rule + ']');
+            let element = document.querySelector("[name=" + rule + "]");
+            if (element) {
+                let elementValue = element.value.trim();
+                for (const fieldKey in validationRules[rule]) {
+                    let fieldValue = validationRules[rule][fieldKey];
+
+                    if (
+                        (fieldKey === "required" && elementValue.length < 1) ||
+                        (fieldKey === "minLength" &&
+                            elementValue.length < fieldValue) ||
+                        (fieldKey === "maxLength" &&
+                            elementValue.length > fieldValue) ||
+                        (fieldKey === "email" &&
+                            elementValue &&
+                            !validateEmail(elementValue)) ||
+                        (fieldKey === "password" &&
+                            elementValue &&
+                            !validatePassword(elementValue)) ||
+                        (fieldKey === "compareElementId" &&
+                            elementValue &&
+                            !checkPasswordsMatch(
+                                document.querySelector("#" + fieldValue).value,
+                                elementValue
+                            ))
+                    ) {
+                        alert(validationMessages[rule][fieldKey]);
+                        break ruleName;
+                    } else {
+                        registerForm.submit();
+                    }
+                }
+            }
+        }
+    });
+
     function validateEmail(email) {
         let regex =
             /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
