@@ -1,0 +1,7 @@
+2024-04-27 21:05:08,743 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-04-27 21:05:08,889 INFO supervisord started with pid 1
+2024-04-27 21:05:10,137 INFO spawned: 'cron' with pid 7
+2024-04-27 21:05:11,141 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-04-27 21:11:30,642 WARN received SIGQUIT indicating exit request
+2024-04-27 21:11:30,816 INFO waiting for cron to die
+2024-04-27 21:11:30,896 WARN stopped: cron (terminated by SIGTERM)
