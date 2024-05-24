@@ -5,13 +5,13 @@
 
 
 @push('css')
-@endpush('')
+@endpush
 
 
 @section('body')
     Admin Anasayfa
-@endsection('')
+@endsection
 
 
 @push('js')
-@endpush('')
+@endpush
